@@ -1,0 +1,101 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* background: tomato; */
+}
+
+body ul{
+    position: relative;
+    transform: rotate(-35deg) skew(10deg, 10deg);
+}
+
+li{
+    list-style: none;
+}
+
+.list-item{
+    /* border: 2px solid red;   */
+    text-decoration: none;
+    background: black;
+    background: linear-gradient(black,white);
+    color: rgb(211, 141, 141);
+    width: 50px; 
+    border: none;
+    height: 50px;
+    display: block;
+    text-align: center;
+    position: relative;
+    line-height: 2.7em;
+    border-bottom: 1px solid grey;
+    box-shadow: -2em 1.5em 0 #e1e1e1;
+    transition: all 0.25s linear;
+}
+
+.list-item:hover{
+    /* background: tomato; */
+    color: white;
+    transform: translate(15px,-8px);
+    background: linear-gradient(red,green);
+    transition: all 0.25s linear;
+}
+
+.list-item::before{
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    background: black;
+    height: 50px;
+    top: 0.25em;
+    left: -0.5em; 
+    transform: skewY(-45deg);
+    transition: all 0.25s linear;
+    border: none;
+}
+
+.list-item::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    background: black;
+    height: 0.5em;
+    top: 50px;
+    left: -0.2em; 
+    transform: skew(-45deg);
+    transition: all 0.25s linear;
+    border: none;
+
+}
+
+.list-item:hover::before{
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    background: linear-gradient(red,green);
+
+    height: 50px;
+    top: 0.25em;
+    left: -0.5em; 
+    transform: skewY(-45deg);
+}
+
+.list-item:hover::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    background: linear-gradient(green,green);
+    height: 0.5em;
+    top: 50px;
+    left: -0.2em; 
+    transform: skew(-45deg);
+}
